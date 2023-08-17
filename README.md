@@ -3,8 +3,7 @@ C++ 표준 : https://isocpp.org/
  <br/>
 C++ 레퍼런스 : https://cppreference.com/     ,     https://www.cpluscplus.com/reference/
 
- <br/>
-## Lv1 풀이
+## Lv1 풀이  <br/>
 ##### Step1 : 달리기경주, 추억점수
 
 
