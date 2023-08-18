@@ -4,7 +4,8 @@ C++ 표준 : https://isocpp.org/
 C++ 레퍼런스 : https://cppreference.com/     ,     https://www.cpluscplus.com/reference/
 
 ## Lv1 풀이  <br/>
-##### Step1 : 달리기경주, 추억점수 <br/> ##### Step2 : 바탕화면 정리, 공원산책
+##### Step1 : 달리기경주, 추억점수 <br/>
+##### Step2 : 바탕화면 정리, 공원산책
 
 
 
