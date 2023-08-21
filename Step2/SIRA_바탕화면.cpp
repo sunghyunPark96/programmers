@@ -14,8 +14,8 @@ vector<int> solution(vector<string> wallpaper) {
                     if (wallpaper[i][j]=='#'){//왜 ""는 안됨?
                         if(i<x_min) x_min = i; 
                         if(j<y_min) y_min = j;    
-                        if(i>x_max) x_max = i+1; //주의 격자 모양, 얘까지 포함하려면 max는 +1씩
-                        if(j>y_max) y_max = j+1; 
+                        if(i+1>x_max) x_max = i+1; //주의 격자 모양, 얘까지 포함하려면 max는 +1씩
+                        if(j+1>y_max) y_max = j+1;  //주의 대각선으로 이어진 경우 i,j = x_max, y_max이므로 업뎃 안됨/ 그래서 i+1,j+1과 비교
                     }
                     
         }
@@ -24,6 +24,6 @@ vector<int> solution(vector<string> wallpaper) {
     answer.push_back(x_min);
     answer.push_back(y_min);
     answer.push_back(x_max);
-    answer.push_back(y_max);  // 주의 !!! 이렇게 하면 안되는 이유 : 바깥쪽 for문을 마지막으로 돌면서 얘는 i=0으로 초기화 되버림
+    answer.push_back(y_max);  
     return answer;
 }
