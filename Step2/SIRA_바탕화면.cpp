@@ -24,6 +24,6 @@ vector<int> solution(vector<string> wallpaper) {
     answer.push_back(x_min);
     answer.push_back(y_min);
     answer.push_back(x_max);
-    answer.push_back(y_max);
+    answer.push_back(y_max);  // 주의 !!! 이렇게 하면 안되는 이유 : 바깥쪽 for문을 마지막으로 돌면서 얘는 i=0으로 초기화 되버림
     return answer;
 }
