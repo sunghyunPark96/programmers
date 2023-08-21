@@ -27,3 +27,7 @@ vector<int> solution(vector<string> wallpaper) {
     answer.push_back(y_max);  
     return answer;
 }
+
+
+//vison box 값 return시 좌상단좌표 우하단 좌표 돌릴때 씀
+//subst
