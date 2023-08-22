@@ -5,7 +5,7 @@ C++ 표준 : https://isocpp.org/
 C++ 레퍼런스 : https://cppreference.com/     ,     https://www.cpluscplus.com/reference/
 <br/>
 
-프로그래머스 사이트 : https://school.programmers.co.kr/
+프로그래머스(코딩문제사이트) : https://school.programmers.co.kr/
 
 <br/>
 TCP School C++ 개념 정리 사이트 : http://www.tcpschool.com/cpp/cpp_function_pointer
