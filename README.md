@@ -10,7 +10,7 @@ TCP School C++ 개념 정리 사이트 : http://www.tcpschool.com/cpp/cpp_functi
 ## Lv1 풀이  <br/>
 ##### Step1 : 달리기경주, 추억점수
 ##### Step2 : 바탕화면 정리, 공원산책
-##### Step2 : 덧칠하기, 대충만든 자판
+##### Step3 : 덧칠하기, 대충만든 자판
 
 
 
