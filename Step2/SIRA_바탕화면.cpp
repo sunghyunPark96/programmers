@@ -11,7 +11,7 @@ vector<int> solution(vector<string> wallpaper) {
     
     for(int i=0; i<wallpaper.size(); i++){ // [".#...", "..#..", "...#."] 
         for(int j=0; j<wallpaper[i].size(); j++){ // .#...
-                    if (wallpaper[i][j]=='#'){//왜 ""는 안됨?
+                    if (wallpaper[i][j]=='#'){//왜 ""는 안됨?  ""는 string ''는 character
                         if(i<x_min) x_min = i; 
                         if(j<y_min) y_min = j;    
                         if(i+1>x_max) x_max = i+1; //주의 격자 모양, 얘까지 포함하려면 max는 +1씩
