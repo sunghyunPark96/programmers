@@ -1,0 +1,39 @@
+Auto :
+- 변수 선언 시에 파이썬처럼 자동으로 변수타입을 추론해서 결정하는 문법.
+- 범위 기반 for문에서 원소를 가져올 때 원소별로 자동으로 타입을 결정할 때 사용.
+- 사용예시
+1) 일반 적인 변수 선언 시 사용
+auto a1 = 10; --> int로 자동 결정.
+2) 범위 기반 for문 사용
+array<int,5> x_array {1,2,3,4,5};
+for (auto i : x_array){
+  cout << i << "\n";
+}
+
+using :
+- aliasing으로 사용되며 기존에는 typedef를 사용했지만 C+11 이후 주로 using을 사용하며 typedef 기능 외에 템플릿 별칭도 지원.
+- 사용예시
+1) 일반 적인 변수 별칭
+using uchar = unsigned char;
+uchar x;
+2) 템플릿 별칭
+using matrix1d = vector<T>;
+matrix1d<float> vec(3)
+3) 함수 별칭
+void my_function(int n){
+  cout << "n" << "\n";}
+
+using func = void(*)(int);
+func fp = &my_function;
+
+범위 기반 for 문 :
+- 원소 및 참조자를 직접 가져오는 for문으로 원소를 직접 가져올 때는 n이 numbers의 값들을 copy해서 가져오고
+참조자를 가져올 때는 numbers의 주소 값들을 가져오기 때문에 n을 참조해서 변수를 수정할경우 원본도 수정됨
+- 사용예시
+1) 원소 직접
+vector<int> numbers {10,20,30};
+for (int n : numbers) cout << n << endl;
+
+1) 참조자
+vector<int> numbers {10,20,30};
+for (auto& n : numbers) cout << n << endl;
