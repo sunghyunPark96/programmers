@@ -95,7 +95,7 @@ Associative Containers - ordered map:
 
 Sequence Container - 양방향 큐 (Vector):
 - 삽입과 삭제가 양쪽 끝에서 모두 가능한 자료 구조
-- 컨데이너로 배열, 연결리스트 사용 가능 컨테이너 특징을 그대로 따라감
+- 컨데이너로 배열, 이중 연결리스트 사용 가능 컨테이너 특징을 그대로 따라감
 - 환형큐와 비슷하게 양방향 큐의 맨앞과 맨 마지막 위치를 갱신
 
 Associative Containers - unordered map:
