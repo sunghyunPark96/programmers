@@ -11,7 +11,7 @@ for (auto i : x_array){
   cout << i << "\n";
 }
 
-using :
+## using :
 - aliasing으로 사용되며 기존에는 typedef를 사용했지만 C+11 이후 주로 using을 사용하며 typedef 기능 외에 템플릿 별칭도 지원.
 - 사용예시
 1) 일반 적인 변수 별칭
@@ -27,7 +27,7 @@ void my_function(int n){
 using func = void(*)(int);
 func fp = &my_function;
 
-범위 기반 for 문 :
+## 범위 기반 for 문 :
 - 원소 및 참조자를 직접 가져오는 for문으로 원소를 직접 가져올 때는 n이 numbers의 값들을 copy해서 가져오고
 참조자를 가져올 때는 numbers의 주소 값들을 가져오기 때문에 n을 참조해서 변수를 수정할경우 원본도 수정됨
 - 사용예시
@@ -41,7 +41,7 @@ for (auto& n : numbers) cout << n << endl;
 vector<int> numbers {10,20,30};
 for (const auto& s : numbers) cout << n << endl;
 
-람다표현식 :
+## 람다표현식 :
 - C++11에서 지원하는 이름 없는 함수 객체로 함수의 포인터나 함수 객체를 대체
 - 파라미터()와 캡처[], 바디(명령){}로 이루어지며 파라미터와 캡처로 값을 받을 수 있으며 파라미터는 호출 시 값을 전달하는 용도로만 사용하고 캡처는 람다가 외부의 변수를 직접적으로 활용할 수 있게 해줘서
 포인터로 접근하면 외부 변수를 조작하는 것도 가능함
@@ -72,5 +72,5 @@ sort(students.begin(), students.end(), [](const Person& p1, const Person& p2){
   return p1.name < p2.name;
 )}
 
-크로노 라이브러리 :
+## 크로노 라이브러리 :
 - 시간 측정 라이브러리로 정밀하게 알고리즘 동작 시간 측정 가능
