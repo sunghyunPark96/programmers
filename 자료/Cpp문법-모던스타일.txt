@@ -1,4 +1,5 @@
-Auto :
+
+##Auto :
 - 변수 선언 시에 파이썬처럼 자동으로 변수타입을 추론해서 결정하는 문법.
 - 범위 기반 for문에서 원소를 가져올 때 원소별로 자동으로 타입을 결정할 때 사용.
 - 사용예시
@@ -39,3 +40,37 @@ for (auto& n : numbers) cout << n << endl;
 3) 참조자로 n을 가져왔지만 const로 상수 선언하여 루프에서 변경 불가하게 만듦
 vector<int> numbers {10,20,30};
 for (const auto& s : numbers) cout << n << endl;
+
+람다표현식 :
+- C++11에서 지원하는 이름 없는 함수 객체로 함수의 포인터나 함수 객체를 대체
+- 파라미터()와 캡처[], 바디(명령){}로 이루어지며 파라미터와 캡처로 값을 받을 수 있으며 파라미터는 호출 시 값을 전달하는 용도로만 사용하고 캡처는 람다가 외부의 변수를 직접적으로 활용할 수 있게 해줘서
+포인터로 접근하면 외부 변수를 조작하는 것도 가능함
+- 사용예시
+1) 변수의 포인터 이용 외부 변수 캡처
+int x = 10;
+auto increment = [&x]() {
+    x++;
+};
+increment();
+std::cout << x; // 결과: 11
+2) 외부 변수의 값 캡처
+int y = 7;
+auto multiply = [y](int a) -> int {
+    return a * y;
+};
+int result = multiply(5); // 결과: 35
+3) 파라미터로 전달
+int y = 7;
+auto multiply = [](int a, int y) -> int {
+return a * y;
+};
+int result = multiply(5,y); // 결과: 35
+4) 구조체를 파라미터로 받은 뒤 사람 이름에 따라 정렬
+~~ Person 구조체 정의(string name, int age)
+~~ students 벡터 정의(타입:Person 구조체)
+sort(students.begin(), students.end(), [](const Person& p1, const Person& p2){
+  return p1.name < p2.name;
+)}
+
+크로노 라이브러리 :
+- 시간 측정 라이브러리로 정밀하게 알고리즘 동작 시간 측정 가능
