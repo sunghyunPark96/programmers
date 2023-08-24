@@ -79,6 +79,10 @@ x.pop(); --> 10
 공간 복잡도: O(n)
 주로 사용되는 곳: 선입선출(FIFO) 구조로 사용되며, 태스크 큐, 프린터 대기열 등에 활용됩니다.
 
+Container Adaptors - 환형 큐 (Queue):
+- push는 메모리 공간 상 가장 뒤에 추가 되고 pop은 메모리 공간 상 가장 앞에서 제거 되기 때문에 push, pop이 반복 될경우 앞 쪽의 메모리 공간이
+의미 없이 공간을 차지 하게 되는 문제점(rightward drift)을 개선한 큐=환형큐
+- 환형 큐는 선입선출(FIFO)의 원칙에 따라 작업이 수행되고 마지막 위치가 원을 이루듯이 다시 첫 번째 위치에 연결되는 선형 데이터 구조
 Associative Containers - ordered map:
 접근: O(log n)
 삽입: O(log n)
