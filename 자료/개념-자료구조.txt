@@ -54,6 +54,7 @@ stack<int> x;
 x.push(10);
 x.push(20);
 x.push(30);
+x.pop(); --> 30
 인덱스 접근: O(n) --> Random Access가 인덱스 없어서 불가능
 삽입 (맨 위): O(1)
 검색: O(n)
@@ -64,6 +65,13 @@ x.push(30);
 Container Adaptors - 큐 (Queue):
 - 줄을 세우 듯이 저장하는 선형 자료 구조로써 선입선출(FIFO) 원리에 따라 삽입과 삭제가 수행
 - 컨데이너로 디큐, 연결리스트사용 컨테이너 특징을 그대로 따라감
+- push로 입력(last in), pop으로 출력(first out)
+- 큐 선언 예시
+queue<int> x;
+x.push(10);
+x.push(20);
+x.push(30);
+x.pop(); --> 10
 접근: O(n)
 삽입 (맨 앞/뒤): O(1)
 검색: O(n)
