@@ -1,0 +1,82 @@
+함수 포인터:
+- 함수의 메모리 주소를 가르키는 변수로 함수를 변수처럼 다루거나 호출을 지연시키는데 사용되며 함수를 일급객체처럼 파라미터로 넘기거나 변수로 활용할 때 사용
+- 사용예시
+1) 반환 값이 없는 함수 포인터 초기화
+void printNumber(int num) {
+    std::cout << "Number: " << num << std::endl;
+}
+
+int main() {
+    // 함수 포인터 선언 및 함수를 가리키도록 초기화
+    void (*funcPtr)(int) = &printNumber;
+    // 함수 포인터를 통한 함수 호출
+    funcPtr(42); // 출력: Number: 42
+    return 0;
+}
+
+2) 반환 값이 있는 함수 포인터 초기화
+// 반환 값이 있는 함수 정의
+int add(int a, int b) {
+    return a + b;
+}
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int main() {
+    // 함수 포인터 타입 정의: int 인자를 받아 int를 반환하는 함수 포인터 타입
+    using FuncType = int (*)(int, int);
+    // 함수 포인터 변수 선언 및 함수를 가리키도록 초기화
+    FuncType funcPtr = &add;
+    // 함수 포인터를 사용하여 함수 호출 및 반환 값 사용
+    int result = funcPtr(5, 3); // add(5, 3) 호출
+    std::cout << "Result: " << result << std::endl; // 출력: Result: 8
+    // 함수 포인터를 다른 함수를 가리키도록 변경
+    funcPtr = &subtract;
+    result = funcPtr(10, 4); // subtract(10, 4) 호출
+    std::cout << "Result: " << result << std::endl; // 출력: Result: 6
+    return 0;
+}
+
+3) 함수 포인터를 파라미터로 사용
+// 함수 정의
+void performOperation(int a, int b, int (*operation)(int, int)) {
+    int result = operation(a, b);
+    std::cout << "Result: " << result << std::endl;
+}
+// 덧셈 함수
+int add(int x, int y) {
+    return x + y;
+}
+// 곱셈 함수
+int multiply(int x, int y) {
+    return x * y;
+}
+
+int main() {
+    performOperation(5, 3, add);      // 출력: Result: 8
+    performOperation(5, 3, multiply); // 출력: Result: 15
+    return 0;
+}
+
+4) 함수 포인터를 변수처럼 사용
+// 함수 정의
+void sayHello() {
+    std::cout << "Hello, ";
+}
+void sayWorld() {
+    std::cout << "World!" << std::endl;
+}
+
+int main() {
+    void (*funcPtr)() = nullptr; // 함수 포인터 초기화
+    funcPtr = &sayHello;
+    funcPtr(); // 출력: Hello,
+    funcPtr = &sayWorld;
+    funcPtr(); // 출력: World!
+    return 0;
+}
+
+
+
+
