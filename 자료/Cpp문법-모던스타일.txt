@@ -33,7 +33,9 @@ func fp = &my_function;
 1) 원소 직접
 vector<int> numbers {10,20,30};
 for (int n : numbers) cout << n << endl;
-
-1) 참조자
+2) 참조자
 vector<int> numbers {10,20,30};
 for (auto& n : numbers) cout << n << endl;
+3) 참조자로 n을 가져왔지만 const로 상수 선언하여 루프에서 변경 불가하게 만듦
+vector<int> numbers {10,20,30};
+for (const auto& s : numbers) cout << n << endl;
