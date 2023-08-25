@@ -85,6 +85,7 @@ Container Adaptors - 환형 큐 (Queue):
 - 환형 큐는 선입선출(FIFO)의 원칙에 따라 작업이 수행되고 마지막 위치가 원을 이루듯이 다시 첫 번째 위치에 연결되는 선형 데이터 구조
 - 데이터가 추가될 경우 첫번 째 데이터칸(rear) 시계방향으로 한칸 전진, 제거될 경우 마지막 데이터칸(front) 시계방향으로 한칸 전진
 - 환형 큐는 STL에 없음
+
 Associative Containers - ordered map:
 접근: O(log n)
 삽입: O(log n)
@@ -93,10 +94,11 @@ Associative Containers - ordered map:
 공간 복잡도: O(n)
 주로 사용되는 곳: 키와 값의 쌍을 저장하며, 키 기반의 검색이 필요한 경우.
 
-Sequence Container - 양방향 큐 (Vector):
+Sequence Container - 덱 큐(deque):
 - 삽입과 삭제가 양쪽 끝에서 모두 가능한 자료 구조
 - 컨데이너로 배열, 이중 연결리스트 사용 가능 컨테이너 특징을 그대로 따라감
 - 환형큐와 비슷하게 양방향 큐의 맨앞과 맨 마지막 위치를 갱신
+- std::deque : 크기 같은 여러개의 메모리 청크를 사용하여 데이터 저장
 
 Associative Containers - unordered map:
 접근: O(1) ~ O(n) (해시 충돌에 따라 다름)
