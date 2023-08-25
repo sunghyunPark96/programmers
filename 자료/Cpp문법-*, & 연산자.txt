@@ -1,1 +1,16 @@
+* 역참조 연산자 : 
+- 포인터 또는 반복자가 가르키는 값을 가져올 때 사용
 
+& 주소 연산자 :
+- 변수나 객체의 메모리 주소를 가져올 때 사용
+
+사용 예시 : 
+int main() {
+    int x = 5;
+    int* ptr = &x; // ptr은 x의 메모리 주소를 가리킴
+
+    std::cout << "Value of x: " << *ptr << std::endl; // *ptr은 x의 값을 가져옴
+    std::cout << "Address of x: " << &x << std::endl; // &x는 x의 메모리 주소를 가져옴
+
+    return 0;
+}
