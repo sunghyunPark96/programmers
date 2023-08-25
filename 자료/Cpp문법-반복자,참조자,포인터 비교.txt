@@ -1,12 +1,46 @@
 반복자(Iterator) :
 - 주로 컨테이너와 함께 사용되며 요소를 순회하고 조작하는데 사용되는 개념. 컨테이너의 내부 구현 세부사항을 노출시키지 않고 작동(컨테이너 내부 구조와 내부 동작을 알 필요가 없음)
-- 반복자 : 컨테이너 내부 원리 몰라도 요소 순회 가능 및 조작 가능
-- 포인터 : 컨테이너 및 컨테이너 내부 메모리 주소 값들로 요소 순회할려면 컨테이너 동작을 알아야해서 요소 순회 말고 다른 곳에 주로 사용(함수 포인터...)
-- 예시 :
+- 반복자 사용 인덱스 접근 예시 :
 std::vector<int> numbers = {1, 2, 3, 4, 5}; --> 벡터 정의
 vector<int>::iterator it = numbers.begin(); --> 시작 반복자 반환
 cout << *it << endl; --> 역참조 연산자 *를 통해 반복자가 가지고 있는 주소의 실제 값(1) 반환
 ++it; --> 주소 값 + 1
 cout << *it <<endl; --> 역참조 연산자 *를 통해 반복자가 가지고 있는 주소의 실제 값(2) 반환
 
+포인터(Pointer) :
+- 컨테이너 및 컨테이너 내부 메모리 주소 값들로 요소 순회할려면 컨테이너 동작을 알아야해서 요소 순회 말고 다른 곳에 주로 사용(함수 포인터...)
+- 포인터 연산으로 다른 메모리 위치에 접근 가능
+- 새로운 주소 할당해서 다른 변수 가르키기 가능
+- 포인터 초기화 예시 :
+int main() {
+    int value = 42;
+    int* ptr; // int형 포인터 선언
+    ptr = &value; // ptr에 value 변수의 주소 할당
+    std::cout << "Value: " << value << std::endl;
+    std::cout << "Pointer value: " << *ptr << std::endl; // 포인터를 역참조하여 값 출력
+    return 0;
+}
 
+참조자(Reference) :
+- 참조자는 기존에 선언되어 있는 변수의 별명으로 참조자로 기존 변수를 참조할 수 있음
+- 단순 참조다 보니까 변수공간에 새로운 변수를 할당하지 않으며 선언되면서 바로 초기화 실시
+- 함수의 매개변수로 사용되면 값 복사 대신 기존 값 변경 가능
+- 참조자 초기화 예시 :
+int main() {
+    int original = 10;
+    // 참조자를 선언하고 변수 original에 대한 참조로 초기화
+    int& ref = original;
+    std::cout << "Original value: " << original << std::endl;
+    std::cout << "Reference value: " << ref << std::endl;
+    // 참조자를 통해 값을 변경하면 원본 변수도 변경됨
+    ref = 20;
+    std::cout << "Original value after modification: " << original << std::endl;
+    std::cout << "Reference value after modification: " << ref << std::endl;
+    return 0;
+}
+
+
+## 요약
+참조자 : 기존 변수 별명, 다른변수 참조 불가능, 선언과 동시 초기화 제약
+포인터 : 주소 연산 가능, 새로운 주소 할당, 수정 가능
+반복자 : 컨테이너 접근 추상화
