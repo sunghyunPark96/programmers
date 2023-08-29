@@ -5,6 +5,8 @@ C++ 레퍼런스 : https://cppreference.com/     ,     https://www.cpluscplus.co
 
 프로그래머스(코딩문제사이트) : https://school.programmers.co.kr/
 
+프로그래머스(시험 시 참고 가능 문서)C++ documentation — DevDocs (programmers.co.kr)
+
 TCP School C++ 개념 정리 사이트 : http://www.tcpschool.com/cpp/cpp_function_pointer
 
 MicroSoft C++ 언어 설명서 : https://learn.microsoft.com/ko-kr/cpp/cpp/?view=msvc-170
