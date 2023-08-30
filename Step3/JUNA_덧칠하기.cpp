@@ -8,9 +8,9 @@ int solution(int n, int m, vector<int> section)
     int ans=1;                      //횟수
     int ss=section.size();          //배열크기
     
-    for(int i=section[0];i<ss;i++)
+    for(int i=0;i<ss-1;i++)
     {
-        if(i+m-1>=section[ss-1])    //칠했을 때 마지막 원소보다 크거나 같을때까지 반복
+        if(section[i-1]+m>=section[ss-1])    //칠했을 때 마지막 원소보다 크거나 같을 때까지
             break;
             ans++;                  
     }
