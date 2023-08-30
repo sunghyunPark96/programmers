@@ -10,9 +10,9 @@ int solution(int n, int m, vector<int> section)
     
     for(int i=0;i<ss-1;i++)
     {
-        if(section[i-1]+m>=section[ss-1])    //칠했을 때 마지막 원소보다 크거나 같을 때까지
+        if(section[i]+m>section[ss-1])    //칠했을 때 마지막 원소보다 크거나 같을 때까지
             break;
-            ans++;                  
+            ans++;                
     }
     return ans;
 }
